@@ -34,7 +34,7 @@
         android:hint="password"/>
 
     <Button
-        android:text="Button"
+        android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_login"
@@ -49,5 +49,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="68dp"
         android:id="@+id/textView2"
-        android:textSize="50dp"/>
+        android:textSize="50dp" />
+
+    <TextView
+        android:text="Register Now!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView_RegisterLink"
+        android:clickable="true"
+        android:textColor="#2538c6"/>
 </RelativeLayout>
