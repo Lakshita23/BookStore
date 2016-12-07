@@ -10,29 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lakshita.bookstore.Login">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="123dp"
-        android:id="@+id/editText_username"
-        android:hint="Username"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/editText_username"
-        android:layout_alignLeft="@+id/editText_username"
-        android:layout_alignStart="@+id/editText_username"
-        android:layout_marginTop="14dp"
-        android:id="@+id/editText_password"
-        android:hint="password"/>
-
     <Button
         android:text="Login"
         android:layout_width="wrap_content"
@@ -42,17 +19,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="Login Page"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp"
-        android:id="@+id/textView2"
-        android:textSize="50dp" />
-
-    <TextView
-        android:text="Register Now!"
+        android:text="Not a member? Register Now!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_login"
@@ -61,4 +28,37 @@
         android:id="@+id/textView_RegisterLink"
         android:clickable="true"
         android:textColor="#2538c6"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText_LoginPassword"
+        android:hint="password"
+        android:layout_above="@+id/button_login"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <TextView
+        android:text="Login Page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_LoginLoginID"
+        android:hint="Username"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/editText_LoginPassword"
+        android:layout_alignLeft="@+id/editText_LoginPassword"
+        android:layout_alignStart="@+id/editText_LoginPassword" />
 </RelativeLayout>

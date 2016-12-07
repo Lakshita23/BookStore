@@ -1,9 +1,7 @@
 package com.example.lakshita.bookstore;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,15 +11,16 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 
 public class Registration extends AppCompatActivity {
 
     /** Variables **/
-    EditText editText_Name, editText_ChooseUserName, editText_ChoosePassword, editText_CreditCard, editText_Address, editText_Phone;
-    String name, chooseUsername,choosePassword,address, creditCard,phone;
-    Button btn_Register;
+    private EditText editText_Registerfullname, editText_RegisterLoginID , editText_RegisterPassword, editText_RegisterCreditCard, editText_RegisterAddress, editText_RegisterPhone;
+    private String registerName, registerLoginid,registerPassword,registerCreditCard, registerAddress,registerPhone;
+    private Button btn_Register;
 
-    private static final String RegisterURL = "http://192.168.1.3/webapp/register.php";
+    private static final String RegisterURL = "http://bookdb.16mb.com/register.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,41 +28,39 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         // Locate widgets in activity_Registration.xml
-        editText_Name = (EditText)findViewById(R.id.editText_Name);
-        editText_ChooseUserName = (EditText)findViewById(R.id.editText_ChooseUsername);
-        editText_ChoosePassword = (EditText)findViewById(R.id.editText_ChoosePassword);
-        editText_CreditCard = (EditText)findViewById(R.id.editText_CreditCard);
-        editText_Address = (EditText)findViewById(R.id.editText_Address);
-        editText_Phone = (EditText)findViewById(R.id.editText_Phone);
+        editText_Registerfullname = (EditText)findViewById(R.id.editText_Registerfullname);
+        editText_RegisterLoginID = (EditText)findViewById(R.id.editText_RegisterLoginID);
+        editText_RegisterPassword = (EditText)findViewById(R.id.editText_RegisterPassword);
+        editText_RegisterCreditCard= (EditText)findViewById(R.id.editText_RegisterCreditCard);
+        editText_RegisterAddress = (EditText)findViewById(R.id.editText_RegisterAddress);
+        editText_RegisterPhone = (EditText)findViewById(R.id.editText_RegisterPhone);
 
         btn_Register = (Button)findViewById(R.id.button_Register);
 
         // On click
         btn_Register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                registerUser();
+                registerUserParameters();
             }
         });
 
     }
 
-    private void registerUser(){
-        name = editText_Name.getText().toString();
-        chooseUsername = editText_ChooseUserName.getText().toString();
-        choosePassword = editText_ChoosePassword.getText().toString();
-        creditCard = editText_CreditCard.getText().toString();
-        address = editText_Address.getText().toString();
-        phone = editText_Phone.getText().toString();
+    private void registerUserParameters(){
+        registerName = editText_Registerfullname.getText().toString().trim();
+        registerLoginid =  editText_RegisterLoginID.getText().toString().trim();
+        registerPassword = editText_RegisterPassword.getText().toString().trim();
+        registerCreditCard = editText_RegisterCreditCard.getText().toString().trim();
+        registerAddress = editText_RegisterAddress.getText().toString().trim();
+        registerPhone = editText_RegisterPhone.getText().toString().trim();
 
-        register(name,chooseUsername,choosePassword,creditCard,address,phone);
+        register(registerName,registerLoginid,registerPassword,registerCreditCard,registerPhone ,registerAddress);
     }
 
-    private void register(String name, String chooseUsername, String choosePassword, String creditCard, String address, String phone){
-        String urlSuffix = "?name="+name+"&username="+chooseUsername+"&password="+choosePassword+"&creditCard="+creditCard+"&address="+address+"&phone="+phone;
-
-        class RegisterUser extends AsyncTask<String, Void, String> {
-
+    private void register(String registerName,String registerLoginid,String registerPassword,String registerCreditCard,String registerPhone ,String registerAddress) {
+        class registerUser extends AsyncTask<String, Void, String>{
             ProgressDialog loading;
+            RegisterUserClass ruc = new RegisterUserClass();
 
 
             @Override
@@ -81,27 +78,27 @@ public class Registration extends AppCompatActivity {
 
             @Override
             protected String doInBackground(String... params) {
-                String s = params[0];
-                BufferedReader bufferedReader = null;
-                try {
-                    URL url = new URL(RegisterURL+s);
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-                    String result;
+                HashMap<String, String> data = new HashMap<String,String>();
+                data.put("loginid",params[0]);
+                data.put("fullname",params[1]);
+                data.put("password",params[2]);
+                data.put("credit_card",params[3]);
+                data.put("address",params[4]);
+                data.put("phone",params[5]);
 
-                    result = bufferedReader.readLine();
 
-                    return result;
-                }catch(Exception e){
-                    return null;
-                }
+                String result = ruc.sendPostRequest(RegisterURL,data);
+
+                return  result;
             }
         }
 
-        RegisterUser ru = new RegisterUser();
-        ru.execute(urlSuffix);
+        registerUser ru = new registerUser();
+        ru.execute(registerName,registerLoginid,registerPassword,registerCreditCard,registerPhone ,registerAddress);
     }
+
+
 }
 
 
