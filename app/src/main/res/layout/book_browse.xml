@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.44">
+
+        <RelativeLayout
+            android:layout_width="255dp"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/publisher_browse"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/author_browse"
+                android:layout_alignLeft="@+id/author_browse"
+                android:layout_alignStart="@+id/author_browse" />
+
+            <TextView
+                android:text="Author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp"
+                android:layout_alignBaseline="@+id/author_browse"
+                android:layout_alignBottom="@+id/author_browse"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Publisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_alignBaseline="@+id/publisher_browse"
+                android:layout_alignBottom="@+id/publisher_browse"
+                android:layout_alignLeft="@+id/textView5"
+                android:layout_alignStart="@+id/textView5" />
+
+            <TextView
+                android:text="Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:layout_marginTop="14dp"
+                android:layout_below="@+id/publisher_browse"
+                android:layout_alignLeft="@+id/textView6"
+                android:layout_alignStart="@+id/textView6" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:layout_below="@+id/title_browse"
+                android:id="@+id/subject_browse"
+                android:textSize="12sp"
+                android:layout_toEndOf="@+id/textView6" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/author_browse"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView6"
+                android:layout_toEndOf="@+id/textView6" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/title_browse"
+                android:textSize="12sp"
+                android:layout_alignBaseline="@+id/textView7"
+                android:layout_alignBottom="@+id/textView7"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@+id/subject_browse"
+                android:layout_alignStart="@+id/subject_browse" />
+
+            <TextView
+                android:text="Subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:layout_alignBaseline="@+id/subject_browse"
+                android:layout_alignBottom="@+id/subject_browse"
+                android:layout_alignLeft="@+id/textView7"
+                android:layout_alignStart="@+id/textView7" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <Button
+                android:text="Search"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:id="@+id/searchbtn"
+                android:textSize="14sp" />
+
+            <Button
+                android:text="Year ASC"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/yearasc"
+                android:textSize="10sp" />
+
+            <Button
+                android:text="Year DESC"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:id="@+id/yeardesc"
+                android:textSize="10sp" />
+
+            <Button
+                android:text="Feedback ASC"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:id="@+id/feedbackasc"
+                android:textSize="10sp"
+                android:layout_weight="0.31" />
+
+            <Button
+                android:text="Feedback DESC"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:id="@+id/feedbackdesc"
+                android:textSize="10sp"
+                android:layout_weight="0.02" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="451dp"
+        android:numColumns="2"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="30dp"
+        android:id="@+id/simpleGridView" />
+
+</LinearLayout>
