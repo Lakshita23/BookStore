@@ -33,8 +33,8 @@ import java.util.Map;
  */
 
 public class BookBrowse extends AppCompatActivity{
-    private static final String BROWSE_URL = "http://10.13.36.73/bookstore/bookbrowsing.php";
-    private static final String BROWSE_JSON = "http://10.13.36.73/bookstore/bookbrowsing.json";
+    private static final String BROWSE_URL = "http://172.23.25.107/bookstore/bookbrowsing.php";
+    private static final String BROWSE_JSON = "http://172.23.25.107/bookstore/bookbrowsing.json";
 
     HashMap<Integer,ArrayList<String>> books;
     CustomAdapter customAdapter;

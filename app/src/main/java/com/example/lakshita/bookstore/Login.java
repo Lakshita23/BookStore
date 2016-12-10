@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class Login extends AppCompatActivity {
 
-    private static final String LOGIN_URL = "http://10.13.36.73/bookstore/login.php";
+    private static final String LOGIN_URL = "http://172.23.25.107/bookstore/login.php";
 
     Button btn_Login;
     TextView textView_Register;
