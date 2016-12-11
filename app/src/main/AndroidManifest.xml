@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Login"
+            android:name=".newLogin"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,9 @@
         <activity android:name=".User_DLV" />
         <activity android:name=".User_FeedbackDisplayListView" />
         <activity android:name=".User_Feedback" />
-        <activity android:name=".User_RatingsOnFeedback"></activity>
+        <activity android:name=".User_RatingsOnFeedback" />
+        <activity android:name=".Admin_MainPage" />
+        <activity android:name=".Admin_EditBook_New"></activity>
     </application>
 
 </manifest>

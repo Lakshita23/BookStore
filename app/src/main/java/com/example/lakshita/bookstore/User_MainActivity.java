@@ -36,7 +36,7 @@ public class User_MainActivity extends AppCompatActivity {
         Intent fromLogin = getIntent();
 
         // Receive intent
-        receivedloginid = fromLogin.getStringExtra("loginid");
+        receivedloginid = fromLogin.getStringExtra("passedLoginid");
         Toast.makeText(this, receivedloginid, Toast.LENGTH_SHORT).show();
 
     }

@@ -85,7 +85,7 @@ public class Login extends AppCompatActivity {
             int tmp;
 
             try {
-                URL url = new URL("http://bookdb.16mb.com/login.php");
+                URL url = new URL("http://bookdb.16mb.com/login_hetty.php");
                 String urlParams = "loginid="+loginid+"&password="+password;
 
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -118,23 +118,27 @@ public class Login extends AppCompatActivity {
         protected void onPostExecute(String s) {
             String err=null;
             try {
-                Toast.makeText(Login.this, "try", Toast.LENGTH_SHORT).show();
+
                 JSONObject root = new JSONObject(s);
-                JSONObject user_data = root.getJSONObject("user_data");
-                loginid = user_data.getString("loginid").toString();
-                password = user_data.getString("password").toString();
+                JSONObject user_data = root.getJSONObject("result");
+
+
+                //loginid = user_data.getString("loginid").toString();
+                //password = user_data.getString("password").toString();
                 admins = user_data.getString("admins").toString();
+
+                Toast.makeText(Login.this, "ADMIN?!" + admins, Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {
                 e.printStackTrace();
                 err = "Exception: "+e.getMessage();
             }
-            Intent i = new Intent(Login.this, User_MainActivity.class);
+/*            Intent i = new Intent(Login.this, User_MainActivity.class);
             i.putExtra("loginid", loginid);
             i.putExtra("password", password);
             i.putExtra("err", err); // Error
-            startActivity(i);
+            startActivity(i);*/
 
 
         }

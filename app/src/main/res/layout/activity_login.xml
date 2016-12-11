@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_login"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="invokeLogin" />
 
     <TextView
         android:text="Not a member? Register Now!"
