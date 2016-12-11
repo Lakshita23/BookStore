@@ -1,16 +1,15 @@
 package com.example.lakshita.bookstore;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 
 public class Registration extends AppCompatActivity {
@@ -74,6 +73,10 @@ public class Registration extends AppCompatActivity {
                 super.onPostExecute(s);
                 loading.dismiss();
                 // Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+                Toast.makeText(Registration.this, "You have been registered", Toast.LENGTH_SHORT).show();
+                Intent myIntent = new Intent(Registration.this,
+                        Login.class);
+                startActivity(myIntent);
             }
 
             @Override
@@ -93,7 +96,6 @@ public class Registration extends AppCompatActivity {
                 return  result;
             }
         }
-
         registerUser ru = new registerUser();
         ru.execute(registerName,registerLoginid,registerPassword,registerCreditCard,registerPhone ,registerAddress);
     }

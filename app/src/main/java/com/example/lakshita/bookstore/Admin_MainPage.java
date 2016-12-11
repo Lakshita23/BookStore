@@ -2,10 +2,9 @@ package com.example.lakshita.bookstore;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -102,8 +101,11 @@ public class Admin_MainPage extends AppCompatActivity {
         }
     }
 
-    public void addBookActivityFunction(View view){
-        Intent toAddBookActivity = new Intent(this, AddBook.class);
-        startActivity(toAddBookActivity);
+//
+    
+    public void ViewUserRecords(View view){
+
+            Intent toViewUserRecord = new Intent(this, user_recc.class);
+            startActivity(toViewUserRecord);
     }
 }

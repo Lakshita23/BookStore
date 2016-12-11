@@ -41,12 +41,6 @@
         android:layout_alignEnd="@+id/button_ToaddBook"
         android:onClick="parseJSON"/>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/books_textView" />
-
     <Button
         android:text="Statistics"
         android:layout_width="wrap_content"
@@ -56,5 +50,26 @@
         android:layout_below="@+id/button_ToViewAllBook"
         android:layout_alignLeft="@+id/button_ToaddBook"
         android:layout_alignStart="@+id/button_ToaddBook" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/books_textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="User Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:id="@+id/button_userrecord"
+        android:layout_below="@+id/button_statistics"
+        android:layout_alignRight="@+id/button_ToViewAllBook"
+        android:layout_alignEnd="@+id/button_ToViewAllBook"
+        android:onClick="ViewUserRecords"
+        />
 
 </RelativeLayout>

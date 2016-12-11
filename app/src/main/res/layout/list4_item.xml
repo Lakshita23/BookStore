@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+    <TableLayout
+        android:layout_marginTop="40dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left">
+    <TableRow>
+    <TextView
+        android:id="@+id/idFID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FDFEFE"
+        android:textSize="18sp"
+        android:text="FEEDBACK ID: " />
+
+    <TextView
+        android:id="@+id/fid2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"/>
+</TableRow>
+
+    <!--<TextView-->
+        <!--android:id="@+id/id4"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingBottom="2dip"-->
+        <!--android:textStyle="bold"/>-->
+    <TableRow>
+    <TextView
+        android:id="@+id/ISBN123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FDFEFE"
+        android:textSize="18sp"
+        android:text="ISBN: " />
+
+    <TextView
+        android:id="@+id/ISBN4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textStyle="bold"/>
+</TableRow>
+    <TableRow>
+    <TextView
+        android:id="@+id/idtFTEXt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FDFEFE"
+        android:textSize="18sp"
+        android:text="FEEDBACK : " />
+    <TextView
+        android:id="@+id/ftext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textStyle="bold"/>
+    </TableRow>
+    <TableRow>
+    <TextView
+        android:id="@+id/idtSCORE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FDFEFE"
+        android:textSize="18sp"
+        android:text="SCORE : " />
+    <TextView
+        android:id="@+id/score2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textStyle="bold"/>
+    </TableRow>
+
+    <TableRow>
+    <TextView
+        android:id="@+id/idusefullness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#FDFEFE"
+        android:textSize="18sp"
+        android:text="USEFULLNESS : " />
+    <TextView
+        android:id="@+id/useful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textStyle="bold"/>
+    </TableRow>
+</TableLayout>
+</LinearLayout>
