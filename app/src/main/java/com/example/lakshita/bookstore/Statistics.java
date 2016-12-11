@@ -21,9 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,8 +32,8 @@ import java.util.Map;
 
 public class Statistics extends AppCompatActivity {
 
-    private static final String STATS_URL = "http://172.23.25.107/bookstore/stats.php";
-    private static final String STATS_JSON = "http://172.23.25.107/bookstore/stats.json";
+    private static final String STATS_URL = "http://bookdb.16mb.com/stats.php";
+    private static final String STATS_JSON = "http://bookdb.16mb.com/stats.json";
 
     RequestQueue requestQueue;
     EditText m;

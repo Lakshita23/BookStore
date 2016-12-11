@@ -8,68 +8,60 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/pink"
     tools:context="com.example.lakshita.bookstore.Admin_MainPage">
 
-    <Button
-        android:text="Add Book"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="197dp"
-        android:id="@+id/button_ToaddBook"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="addBookActivityFunction"/>
-
     <TextView
-        android:text="Welcome!"
+        android:text="Welcome Admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginBottom="42dp"
         android:layout_above="@+id/button_ToViewAllBook"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp"
-        android:id="@+id/textView4"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        />
 
     <Button
-        android:text="View Books"
+        android:text="Edit Books"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_ToViewAllBook"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/button_ToaddBook"
-        android:layout_alignRight="@+id/button_ToaddBook"
-        android:layout_alignEnd="@+id/button_ToaddBook"
+        android:onClick="update_books"
+        android:layout_marginBottom="90dp"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/button_statistics"
+        android:layout_alignLeft="@+id/button_statistics"
+        android:layout_alignStart="@+id/button_statistics"
+        android:textColor="@android:color/background_dark" />
+
+    <Button
+        android:text="VIEW ALL BOOKS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_viewall"
+        android:layout_marginTop="52dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/button_statistics"
+        android:layout_centerHorizontal="true"
         android:onClick="parseJSON"/>
 
     <Button
         android:text="Statistics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:id="@+id/button_statistics"
-        android:layout_below="@+id/button_ToViewAllBook"
-        android:layout_alignLeft="@+id/button_ToaddBook"
-        android:layout_alignStart="@+id/button_ToaddBook" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/books_textView"
+        android:onClick="displayStatistics"
+        android:textSize="20sp"
+        android:layout_marginTop="224dp"
+        android:textColor="@android:color/background_dark"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="User Info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:id="@+id/button_userrecord"
-        android:layout_below="@+id/button_statistics"
-        android:layout_alignRight="@+id/button_ToViewAllBook"
-        android:layout_alignEnd="@+id/button_ToViewAllBook"
-        android:onClick="ViewUserRecords"
-        />
+
 
 </RelativeLayout>

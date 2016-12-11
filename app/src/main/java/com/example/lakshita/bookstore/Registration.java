@@ -34,12 +34,23 @@ public class Registration extends AppCompatActivity {
         editText_RegisterAddress = (EditText)findViewById(R.id.editText_RegisterAddress);
         editText_RegisterPhone = (EditText)findViewById(R.id.editText_RegisterPhone);
 
+
         btn_Register = (Button)findViewById(R.id.button_Register);
 
         // On click
         btn_Register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 registerUserParameters();
+                try {
+                    wait(3);
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Toast.makeText(Registration.this, "You have been registered", Toast.LENGTH_SHORT).show();
+                Intent myIntent = new Intent(Registration.this,
+                        newLogin.class);
+                startActivity(myIntent);
             }
         });
 
@@ -75,7 +86,7 @@ public class Registration extends AppCompatActivity {
                 // Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
                 Toast.makeText(Registration.this, "You have been registered", Toast.LENGTH_SHORT).show();
                 Intent myIntent = new Intent(Registration.this,
-                        Login.class);
+                        newLogin.class);
                 startActivity(myIntent);
             }
 
@@ -96,6 +107,7 @@ public class Registration extends AppCompatActivity {
                 return  result;
             }
         }
+
         registerUser ru = new registerUser();
         ru.execute(registerName,registerLoginid,registerPassword,registerCreditCard,registerPhone ,registerAddress);
     }

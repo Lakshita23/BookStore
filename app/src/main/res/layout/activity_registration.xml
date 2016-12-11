@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/pink"
     tools:context="com.example.lakshita.bookstore.Registration">
 
     <TextView
@@ -17,7 +18,8 @@
         android:id="@+id/textView16"
         android:textSize="45dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,7 +33,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,7 +48,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,7 +63,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -70,7 +78,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -83,7 +93,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark" />
 
     <Button
         android:text="Register"
@@ -105,6 +117,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp" />
 
 </RelativeLayout>

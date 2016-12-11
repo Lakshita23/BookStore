@@ -1,6 +1,5 @@
 package com.example.lakshita.bookstore;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,13 +12,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,7 +23,8 @@ import static com.example.lakshita.bookstore.R.id.listView3;
 public class user_recc extends AppCompatActivity {
 
     String myJSON1,myJSON2,myJSON3,myJSON4;
-    String[] JSON_STRING=new String[4];
+    String receivedloginid;
+
 
     private static final String TAG_RESULTS="result";
     private static final String TAG_ID = "loginid";
@@ -76,6 +69,13 @@ public class user_recc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_recc);
+
+        receivedloginid = getIntent().getStringExtra("loginid");
+        myJSON1=getIntent().getStringExtra("myJSON1");
+        myJSON2=getIntent().getStringExtra("myJSON2");
+        myJSON3=getIntent().getStringExtra("myJSON3");
+        myJSON4=getIntent().getStringExtra("myJSON4");
+
         list = (ListView) findViewById(listView);
         list1= (ListView) findViewById(listView1);
         list2=(ListView) findViewById(listView2);
@@ -87,10 +87,14 @@ public class user_recc extends AppCompatActivity {
         feedbackList=new ArrayList<HashMap<String,String>>();
         usefullnessList=new ArrayList<HashMap<String,String>>();
 
-        getData1();
-        getData2();
-        getData3();
+       // getData1();
+       // getData2();
+      //  getData3();
        // getData4();
+        showList1();
+        showList2();
+        showList3();
+       // showList4();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -282,201 +286,201 @@ public class user_recc extends AppCompatActivity {
     }
 
 
-    public void getData1(){
-        class GetDataJSON1 extends AsyncTask<String, Void, String> {
-            String JSON_URL;
-
-            @Override
-            protected void onPreExecute() {
-                JSON_URL = "http://bookdb.16mb.com/part3q1.php";
-            }
-
-
-            @Override
-            protected void onProgressUpdate(Void... values) {
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            protected String doInBackground(String... params) {
-                    try {
-                        URL url = new URL(JSON_URL);
-                        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                        InputStream inputStream = httpURLConnection.getInputStream();
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                        StringBuilder stringBuilder = new StringBuilder();
-                        while ((JSON_STRING[0]= bufferedReader.readLine()) != null) {
-                            stringBuilder.append(JSON_STRING[0] + "\n");
-                        }
-                        bufferedReader.close();
-                        httpURLConnection.disconnect();
-                        inputStream.close();
-                       return stringBuilder.toString().trim();
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(String result){
-                myJSON1=result;
-                Toast.makeText(user_recc.this, myJSON1, Toast.LENGTH_SHORT).show();
-                showList1();
-            }
-        }
-        GetDataJSON1 g1 = new GetDataJSON1();
-        g1.execute();
-    }
-
-    public void getData2(){
-        class GetDataJSON2 extends AsyncTask<String, Void, String> {
-            String JSON_URL;
-
-            @Override
-            protected void onPreExecute() {
-                JSON_URL= "http://bookdb.16mb.com/part3q2.php";
-            }
-
-
-            @Override
-            protected void onProgressUpdate(Void... values) {
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            protected String doInBackground(String... params) {
-                    try {
-                        URL url = new URL(JSON_URL);
-                        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                        InputStream inputStream = httpURLConnection.getInputStream();
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                        StringBuilder stringBuilder = new StringBuilder();
-                        while ((JSON_STRING[1] = bufferedReader.readLine()) != null) {
-                            stringBuilder.append(JSON_STRING[1]+ "\n");
-                        }
-                        bufferedReader.close();
-                        httpURLConnection.disconnect();
-                        inputStream.close();
-                        return stringBuilder.toString().trim();
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(String result){
-                myJSON2=result;
-                Toast.makeText(user_recc.this, myJSON2, Toast.LENGTH_SHORT).show();
-                showList2();
-            }
-        }
-        GetDataJSON2 g2 = new GetDataJSON2();
-        g2.execute();
-    }
-
-    public void getData3(){
-        class GetDataJSON3 extends AsyncTask<String, Void, String> {
-            String JSON_URL;
-
-            @Override
-            protected void onPreExecute() {
-                JSON_URL= "http://bookdb.16mb.com/part3q3.php";
-            }
-
-
-            @Override
-            protected void onProgressUpdate(Void... values) {
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            protected String doInBackground(String... params) {
-                try {
-                    URL url = new URL(JSON_URL);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    StringBuilder stringBuilder = new StringBuilder();
-                    while ((JSON_STRING[1] = bufferedReader.readLine()) != null) {
-                        stringBuilder.append(JSON_STRING[1]+ "\n");
-                    }
-                    bufferedReader.close();
-                    httpURLConnection.disconnect();
-                    inputStream.close();
-                    return stringBuilder.toString().trim();
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(String result){
-                myJSON3=result;
-                Toast.makeText(user_recc.this, myJSON3, Toast.LENGTH_SHORT).show();
-                showList3();
-            }
-        }
-        GetDataJSON3 g3 = new GetDataJSON3();
-        g3.execute();
-    }
-
-    public void getData4(){
-        class GetDataJSON4 extends AsyncTask<String, Void, String> {
-            String JSON_URL;
-
-            @Override
-            protected void onPreExecute() {
-                JSON_URL= "http://bookdb.16mb.com/part3q4.php";
-            }
-
-
-            @Override
-            protected void onProgressUpdate(Void... values) {
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            protected String doInBackground(String... params) {
-                try {
-                    URL url = new URL(JSON_URL);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    StringBuilder stringBuilder = new StringBuilder();
-                    while ((JSON_STRING[1] = bufferedReader.readLine()) != null) {
-                        stringBuilder.append(JSON_STRING[1]+ "\n");
-                    }
-                    bufferedReader.close();
-                    httpURLConnection.disconnect();
-                    inputStream.close();
-                    return stringBuilder.toString().trim();
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(String result){
-                myJSON4=result;
-                Toast.makeText(user_recc.this, myJSON4, Toast.LENGTH_SHORT).show();
-                showList4();
-            }
-        }
-        GetDataJSON4 g4 = new GetDataJSON4();
-        g4.execute();
-    }
+//    public void getData1(){
+//        class GetDataJSON1 extends AsyncTask<String, Void, String> {
+//            String JSON_URL;
+//
+//            @Override
+//            protected void onPreExecute() {
+//                JSON_URL = "http://bookdb.16mb.com/part3q1.php";
+//            }
+//
+//
+//            @Override
+//            protected void onProgressUpdate(Void... values) {
+//                super.onProgressUpdate(values);
+//            }
+//
+//            @Override
+//            protected String doInBackground(String... params) {
+//                    try {
+//                        URL url = new URL(JSON_URL);
+//                        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+//                        InputStream inputStream = httpURLConnection.getInputStream();
+//                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//                        StringBuilder stringBuilder = new StringBuilder();
+//                        while ((JSON_STRING[0]= bufferedReader.readLine()) != null) {
+//                            stringBuilder.append(JSON_STRING[0] + "\n");
+//                        }
+//                        bufferedReader.close();
+//                        httpURLConnection.disconnect();
+//                        inputStream.close();
+//                       return stringBuilder.toString().trim();
+//                    } catch (MalformedURLException e) {
+//                        e.printStackTrace();
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                return null;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String result){
+//                myJSON1=result;
+//                Toast.makeText(user_recc.this, myJSON1, Toast.LENGTH_SHORT).show();
+//                showList1();
+//            }
+//        }
+//        GetDataJSON1 g1 = new GetDataJSON1();
+//        g1.execute();
+//    }
+//
+//    public void getData2(){
+//        class GetDataJSON2 extends AsyncTask<String, Void, String> {
+//            String JSON_URL;
+//
+//            @Override
+//            protected void onPreExecute() {
+//                JSON_URL= "http://bookdb.16mb.com/part3q2.php";
+//            }
+//
+//
+//            @Override
+//            protected void onProgressUpdate(Void... values) {
+//                super.onProgressUpdate(values);
+//            }
+//
+//            @Override
+//            protected String doInBackground(String... params) {
+//                    try {
+//                        URL url = new URL(JSON_URL);
+//                        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+//                        InputStream inputStream = httpURLConnection.getInputStream();
+//                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//                        StringBuilder stringBuilder = new StringBuilder();
+//                        while ((JSON_STRING[1] = bufferedReader.readLine()) != null) {
+//                            stringBuilder.append(JSON_STRING[1]+ "\n");
+//                        }
+//                        bufferedReader.close();
+//                        httpURLConnection.disconnect();
+//                        inputStream.close();
+//                        return stringBuilder.toString().trim();
+//                    } catch (MalformedURLException e) {
+//                        e.printStackTrace();
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                return null;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String result){
+//                myJSON2=result;
+//                Toast.makeText(user_recc.this, myJSON2, Toast.LENGTH_SHORT).show();
+//                showList2();
+//            }
+//        }
+//        GetDataJSON2 g2 = new GetDataJSON2();
+//        g2.execute();
+//    }
+//
+//    public void getData3(){
+//        class GetDataJSON3 extends AsyncTask<String, Void, String> {
+//            String JSON_URL;
+//
+//            @Override
+//            protected void onPreExecute() {
+//                JSON_URL= "http://bookdb.16mb.com/part3q3.php";
+//            }
+//
+//
+//            @Override
+//            protected void onProgressUpdate(Void... values) {
+//                super.onProgressUpdate(values);
+//            }
+//
+//            @Override
+//            protected String doInBackground(String... params) {
+//                try {
+//                    URL url = new URL(JSON_URL);
+//                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+//                    InputStream inputStream = httpURLConnection.getInputStream();
+//                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//                    StringBuilder stringBuilder = new StringBuilder();
+//                    while ((JSON_STRING[1] = bufferedReader.readLine()) != null) {
+//                        stringBuilder.append(JSON_STRING[1]+ "\n");
+//                    }
+//                    bufferedReader.close();
+//                    httpURLConnection.disconnect();
+//                    inputStream.close();
+//                    return stringBuilder.toString().trim();
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                return null;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String result){
+//                myJSON3=result;
+//                Toast.makeText(user_recc.this, myJSON3, Toast.LENGTH_SHORT).show();
+//                showList3();
+//            }
+//        }
+//        GetDataJSON3 g3 = new GetDataJSON3();
+//        g3.execute();
+//    }
+//
+//    public void getData4(){
+//        class GetDataJSON4 extends AsyncTask<String, Void, String> {
+//            String JSON_URL;
+//
+//            @Override
+//            protected void onPreExecute() {
+//                JSON_URL= "http://bookdb.16mb.com/part3q4.php";
+//            }
+//
+//
+//            @Override
+//            protected void onProgressUpdate(Void... values) {
+//                super.onProgressUpdate(values);
+//            }
+//
+//            @Override
+//            protected String doInBackground(String... params) {
+//                try {
+//                    URL url = new URL(JSON_URL);
+//                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+//                    InputStream inputStream = httpURLConnection.getInputStream();
+//                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//                    StringBuilder stringBuilder = new StringBuilder();
+//                    while ((JSON_STRING[1] = bufferedReader.readLine()) != null) {
+//                        stringBuilder.append(JSON_STRING[1]+ "\n");
+//                    }
+//                    bufferedReader.close();
+//                    httpURLConnection.disconnect();
+//                    inputStream.close();
+//                    return stringBuilder.toString().trim();
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                return null;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String result){
+//                myJSON4=result;
+//                Toast.makeText(user_recc.this, myJSON4, Toast.LENGTH_SHORT).show();
+//                showList4();
+//            }
+//        }
+//        GetDataJSON4 g4 = new GetDataJSON4();
+//        g4.execute();
+//    }
 
 
 }

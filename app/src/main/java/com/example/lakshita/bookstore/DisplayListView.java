@@ -66,7 +66,7 @@ public class DisplayListView extends AppCompatActivity implements ListView.OnIte
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-        Intent goToEditBook = new Intent(this, EditBook.class);
+        Intent goToEditBook = new Intent(this, Admin_EditBook_New.class);
         // Get position of item clicked
         // HashMap<String,String> map =(HashMap)adapterView.getItemAtPosition(position);
         //goToEditBook.putExtra("position",position);

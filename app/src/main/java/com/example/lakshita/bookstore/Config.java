@@ -8,6 +8,8 @@ public class Config {
     public static final String URL_ADDFEEDBACK = "http://bookdb.16mb.com/insertFeedback.php";
     public static final String URL_GETFEEDBACK = "http://bookdb.16mb.com/getFeedbacks.php";
     public static final String URL_ADDRATING = "http://bookdb.16mb.com/addRating.php";
+    public static final String URL_UPDATECOPIES = "http://bookdb.16mb.com/updateCopies.php";
+
 
     // ADD BOOK - Send request to PHP script
     public static final String KEY_BOOK_ISBN = "ISBN";
@@ -32,6 +34,10 @@ public class Config {
     public static final String KEY_RATING_LOGINID = "loginid";
     public static final String KEY_RATING_ISBN = "ISBN";
     public static final String KEY_RATING_RATE = "rate";
+
+    // UPDATE COUNT - Send request to PHP script
+    public static final String KEY_COUNT_ISBN = "ISBN";
+    public static final String KEY_COUNT_COUNT = "copies";
 
 
     // GET BOOKS - JSON TAGS

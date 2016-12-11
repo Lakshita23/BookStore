@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView32"
-        android:layout_alignLeft="@+id/copy_cart"
-        android:layout_alignStart="@+id/copy_cart"
-        android:id="@+id/order_id"
-        android:textSize="24sp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView34"
-        android:layout_alignLeft="@+id/order_id"
-        android:layout_alignStart="@+id/order_id"
-        android:id="@+id/date_cart"
-        android:textSize="24sp" />
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white"
+    >
 
     <TextView
         android:text="Cart"
@@ -30,26 +12,80 @@
         android:id="@+id/textView3"
         android:textSize="30sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark" />
 
-    <TextView
-        android:text="Review your Order"
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:id="@+id/textView23"
-        android:textSize="24sp"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/textView25"
+        android:layout_marginTop="16dp"
+        android:layout_above="@+id/order_cart"
+        android:id="@+id/listR"
+        android:background="@color/green"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Place Order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_cart"
+        android:textSize="18sp"
+        android:onClick="placeOrder"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:id="@+id/title_cart"
         android:textSize="24sp"
         android:layout_below="@+id/textView23"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="#Copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:textSize="25sp"
+        android:layout_below="@+id/publisher_cart"
+        android:layout_toLeftOf="@+id/textView23"
+        android:layout_toStartOf="@+id/textView23"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="publisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/publisher_cart"
+        android:textSize="24sp"
+        android:layout_below="@+id/author_cart"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Recommended Books"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textView25"
+        android:textSize="30sp"
+        android:layout_below="@+id/date_cart"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="Review your Order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView23"
+        android:textSize="24sp"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -63,94 +99,55 @@
         android:layout_alignStart="@+id/textView3" />
 
     <TextView
-        android:text="publisher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/publisher_cart"
-        android:textSize="24sp"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_below="@+id/author_cart"
-        android:layout_alignRight="@+id/order_cart"
-        android:layout_alignEnd="@+id/order_cart" />
-
-    <TextView
-        android:text="# Copy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:id="@+id/textview"
-        android:textSize="24sp"
-        android:layout_marginRight="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_below="@+id/publisher_cart"
-        android:layout_toLeftOf="@+id/publisher_cart"
-        android:layout_toStartOf="@+id/publisher_cart" />
-
-    <TextView
-        android:text="Order ID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:id="@+id/textView32"
-        android:textSize="24sp"
-        android:layout_below="@+id/textview"
-        android:layout_alignLeft="@+id/textview"
-        android:layout_alignStart="@+id/textview" />
-
-    <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/copy_cart"
         android:textSize="24sp"
-        android:layout_alignBaseline="@+id/textview"
         android:layout_alignBottom="@+id/textview"
-        android:layout_alignLeft="@+id/author_cart"
-        android:layout_alignStart="@+id/author_cart" />
+        android:layout_alignLeft="@+id/publisher_cart"
+        android:layout_alignStart="@+id/publisher_cart" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_cart"
+        android:textSize="24sp"
+        android:layout_below="@+id/textView32"
+        android:layout_alignLeft="@+id/copy_cart"
+        android:layout_alignStart="@+id/copy_cart" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_id"
+        android:textSize="24sp"
+        android:layout_below="@+id/copy_cart"
+        android:layout_alignRight="@+id/publisher_cart"
+        android:layout_alignEnd="@+id/publisher_cart" />
 
     <TextView
         android:text="Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView34"
-        android:textSize="24sp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView32"
-        android:layout_alignStart="@+id/textView32" />
+        android:textSize="25sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView32"
+        android:layout_alignRight="@+id/textview"
+        android:layout_alignEnd="@+id/textview" />
 
     <TextView
-        android:text="Recommended Books"
+        android:text="Order ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:id="@+id/textView25"
-        android:textSize="18sp"
-        android:layout_below="@+id/date_cart"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Place Order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/order_cart"
-        android:textSize="18sp"
-        android:onClick="placeOrder"
-        android:layout_marginBottom="11dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView25"
-        android:layout_marginTop="16dp"
-        android:layout_above="@+id/order_cart"
-        android:id="@+id/listR"
-        android:background="@android:color/black"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView32"
+        android:textSize="25sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textview"
+        android:layout_alignLeft="@+id/textview"
+        android:layout_alignStart="@+id/textview" />
 
 </RelativeLayout>

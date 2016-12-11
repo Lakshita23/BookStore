@@ -25,7 +25,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,8 +32,8 @@ import java.util.Map;
  */
 
 public class BookBrowse extends AppCompatActivity{
-    private static final String BROWSE_URL = "http://172.23.25.107/bookstore/bookbrowsing.php";
-    private static final String BROWSE_JSON = "http://172.23.25.107/bookstore/bookbrowsing.json";
+    private static final String BROWSE_URL = "http://bookdb.16mb.com/bookbrowsing.php";
+    private static final String BROWSE_JSON = "http://bookdb.16mb.com/bookbrowsing.json";
 
     HashMap<Integer,ArrayList<String>> books;
     CustomAdapter customAdapter;
@@ -44,6 +43,7 @@ public class BookBrowse extends AppCompatActivity{
     String authorstr, titlestr, publisherstr, subjectstr, orderby, ascdesc;
     Button search, year_asc, year_desc, feedback_asc, feedback_desc;
     String loginid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

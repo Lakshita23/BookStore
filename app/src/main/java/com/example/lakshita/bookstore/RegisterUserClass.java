@@ -14,10 +14,6 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- * Created by heure on 4/12/2016.
- */
-
 public class RegisterUserClass {
     public String sendPostRequest(String requestURL, HashMap<String, String> postDataParams){
         URL url;

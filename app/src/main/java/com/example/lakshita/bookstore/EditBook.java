@@ -34,7 +34,7 @@ public class EditBook extends AppCompatActivity {
         String receivedTitle = fromDisplayListView.getStringExtra("passedTitle");
         String receivedCopies = fromDisplayListView.getStringExtra("passedCopies");
 
-        Toast.makeText(this, receivedISBN + receivedTitle + receivedCopies, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, receivedISBN + receivedCopies, Toast.LENGTH_SHORT).show();
 
 
 

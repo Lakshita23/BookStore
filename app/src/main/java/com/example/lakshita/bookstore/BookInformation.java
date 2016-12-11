@@ -9,7 +9,6 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Lakshita on 12/9/2016.

@@ -1,41 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:text="Book Information"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
-        android:id="@+id/textView4"
-        android:textSize="30sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:id="@+id/textView15"
-        android:layout_below="@+id/textView4"
-        android:layout_toLeftOf="@+id/textView4"
-        android:layout_toStartOf="@+id/textView4"
-        android:layout_marginRight="17dp"
-        android:layout_marginEnd="17dp"
-        android:textSize="18sp" />
-
-    <TextView
-        android:text="Author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:id="@+id/textView17"
-        android:textSize="18sp"
-        android:layout_below="@+id/textView15"
-        android:layout_alignLeft="@+id/textView15"
-        android:layout_alignStart="@+id/textView15" />
+    android:layout_height="match_parent"
+    android:background="@color/green">
 
     <TextView
         android:text="ISBN"
@@ -46,7 +13,8 @@
         android:textSize="18sp"
         android:layout_below="@+id/textView17"
         android:layout_alignLeft="@+id/textView17"
-        android:layout_alignStart="@+id/textView17" />
+        android:layout_alignStart="@+id/textView17"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
         android:text="Publisher"
@@ -57,7 +25,8 @@
         android:layout_alignStart="@+id/textView18"
         android:layout_marginTop="36dp"
         android:id="@+id/textView19"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
         android:text="Price"
@@ -68,28 +37,8 @@
         android:layout_alignStart="@+id/textView19"
         android:layout_marginTop="33dp"
         android:id="@+id/textView20"
-        android:textSize="18sp" />
-
-    <TextView
-        android:text="Copies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView20"
-        android:layout_alignLeft="@+id/textView20"
-        android:layout_alignStart="@+id/textView20"
-        android:layout_marginTop="60dp"
-        android:id="@+id/textView21"
-        android:textSize="14sp" />
-
-    <TextView
-        android:text="Year Published"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView21"
-        android:layout_alignLeft="@+id/textView21"
-        android:layout_alignStart="@+id/textView21"
-        android:layout_marginTop="37dp"
-        android:id="@+id/textView22" />
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -191,14 +140,74 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
+        android:text="Author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textView17"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView15"
+        android:layout_alignLeft="@+id/textView15"
+        android:layout_alignStart="@+id/textView15"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView15"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView4"
+        android:layout_toLeftOf="@+id/textView4"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="Book Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="30sp"
+        android:layout_below="@+id/backtobrowse"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="Copies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView21"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/textView20"
+        android:layout_alignLeft="@+id/textView20"
+        android:layout_alignStart="@+id/textView20" />
+
+    <TextView
+        android:text="Year Published"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/textView22"
+        android:layout_below="@+id/textView21"
+        android:layout_alignLeft="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
         android:text="Select copies to order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView30"
         android:textSize="18sp"
+        android:textColor="@android:color/background_dark"
         android:layout_alignBaseline="@+id/orderbtn"
         android:layout_alignBottom="@+id/orderbtn"
-        android:layout_alignLeft="@+id/textView22"
-        android:layout_alignStart="@+id/textView22" />
+        android:layout_alignLeft="@+id/backtobrowse"
+        android:layout_alignStart="@+id/backtobrowse" />
 
 </RelativeLayout>

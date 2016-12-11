@@ -3,12 +3,9 @@ package com.example.lakshita.bookstore;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,12 +22,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -40,9 +35,9 @@ import java.util.Random;
 
 public class CartActivity extends AppCompatActivity {
 
-    private static final String ORDER_URL = "http://172.23.25.107/bookstore/order.php";
-    private static final String R_URL = "http://172.23.25.107/bookstore/recomendation.php";
-    private static final String R_JSON = "http://172.23.25.107/bookstore/recomendation.json";
+    private static final String ORDER_URL = "http://bookdb.16mb.com/order.php";
+    private static final String R_URL = "http://bookdb.16mb.com/recomendation.php";
+    private static final String R_JSON = "http://bookdb.16mb.com/recomendation.json";
 
     RequestQueue requestQueue;
     TextView title,author,publisher,copies, orderid, date;

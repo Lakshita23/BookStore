@@ -12,4 +12,11 @@
     <string name="title_activity_add_book">AddBook</string>
     <string name="title_activity_feedback">Feedback</string>
     <string name="title_activity_user_getallbooks">user_getallbooks</string>
+    <color name="black"> #000000</color>
+    <color name="pink"> #B29090</color>
+    <color name="white"> #FFFFFF</color>
+    <color name="green">#F6F7BD</color>
+    <color name="green1">#C0D1C2</color>
+    <!--<color name="green1">#4a9c67</color>-->
+
 </resources>

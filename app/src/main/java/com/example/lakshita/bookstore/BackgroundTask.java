@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -39,8 +38,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... params) {
         System.out.println("before SERVER");
         System.out.println(params[0]);
-        String registerURL = "http://10.13.34.201/bookstore/register.php";
-        String loginURL = "http://10.13.34.201/Bookstore/include/login.php";
+        String registerURL = "http://bookdb.16mb.com/register.php";
+        String loginURL = "http://bookdb.16mb.com/login.php";
 
         // To pass info to DB, depend on the actions (Register/Login etc)
         String method = params[0];

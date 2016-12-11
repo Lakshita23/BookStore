@@ -8,16 +8,43 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/pink"
     tools:context="com.example.lakshita.bookstore.User_MainActivity">
 
     <Button
-        android:text="browse all books"
+        android:text="User Info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/button_userrecord"
+        android:onClick="ViewUserRecords"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="58dp"
+        android:layout_alignLeft="@+id/button_browse"
+        android:layout_alignStart="@+id/button_browse"
+        android:layout_alignRight="@+id/button_browse"
+        android:layout_alignEnd="@+id/button_browse"
+        android:textColor="@android:color/background_dark" />
+
+    <Button
+        android:text="Start Browsing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/button_browse"
-        android:onClick="parseJSON" />
+        android:onClick="BrowseBooks"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/button_userrecord"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_viewall"
+        android:text="View All Books"
+        android:layout_marginTop="30dp"
+        android:onClick="parseJSON1"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/button_browse"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

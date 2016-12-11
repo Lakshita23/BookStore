@@ -50,12 +50,6 @@ public class Admin_MainPage extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            //TextView textView = (TextView) findViewById(R.id.books_textView);
-
-            //JSON data. Set result into this textView
-            //textView.setText(result);
-            //Toast.makeText(Admin_MainPage.this, result, Toast.LENGTH_SHORT).show();
-
             jsonString = result;
         }
 
@@ -95,17 +89,29 @@ public class Admin_MainPage extends AppCompatActivity {
             Toast.makeText(this, "Refresh to get JSON", Toast.LENGTH_SHORT).show();
         }else{
 
-            Intent booksListView = new Intent(this, UserDisplayListView.class);
+            Intent booksListView = new Intent(this, DisplayListView.class);
             booksListView.putExtra("json_data", jsonString);
             startActivity(booksListView);
         }
     }
 
-//
-    
-    public void ViewUserRecords(View view){
-
-            Intent toViewUserRecord = new Intent(this, user_recc.class);
-            startActivity(toViewUserRecord);
+    public void displayStatistics(View view){
+      Intent stats= new Intent(this,Statistics.class);
+       startActivity(stats);
     }
+
+    public void update_books(View view){
+        Intent update= new Intent(this,AddBook.class);
+        startActivity(update);
+    }
+
+
+
+//    public void addBookActivityFunction(View view){
+//        Intent toAddBookActivity = new Intent(this, AddBook.class);
+//        startActivity(toAddBookActivity);
+//    }
+
+
+
 }

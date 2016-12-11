@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/green"
     tools:context="com.example.lakshita.bookstore.User_BookDetailsAndFeedback">
 
     <TextView
@@ -18,7 +19,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
+        android:textColor="@android:color/background_dark" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -41,7 +44,9 @@
         android:layout_above="@+id/ratingBar_feedback"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="11dp" />
+        android:layout_marginBottom="11dp"
+        android:textSize="25sp"
+        android:textColor="@android:color/background_dark" />
 
     <Button
         android:text="Submit"
