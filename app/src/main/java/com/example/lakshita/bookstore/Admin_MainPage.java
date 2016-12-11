@@ -96,7 +96,7 @@ public class Admin_MainPage extends AppCompatActivity {
             Toast.makeText(this, "Refresh to get JSON", Toast.LENGTH_SHORT).show();
         }else{
 
-            Intent booksListView = new Intent(this, DisplayListView.class);
+            Intent booksListView = new Intent(this, UserDisplayListView.class);
             booksListView.putExtra("json_data", jsonString);
             startActivity(booksListView);
         }

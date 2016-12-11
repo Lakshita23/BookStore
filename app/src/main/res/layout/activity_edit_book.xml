@@ -10,4 +10,162 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lakshita.bookstore.EditBook">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_addCopies"
+        android:hint="Copies"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/editText_addYearPublished"
+        android:layout_alignLeft="@+id/editText_addYearPublished"
+        android:layout_alignStart="@+id/editText_addYearPublished" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="none"
+        android:ems="10"
+        android:id="@+id/editText_addPrice"
+        android:hint="Price"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/editText_addCopies"
+        android:layout_alignLeft="@+id/editText_addCopies"
+        android:layout_alignStart="@+id/editText_addCopies" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_addBookFormat"
+        android:hint="Book Format"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/editText_addPrice"
+        android:layout_alignLeft="@+id/editText_addPrice"
+        android:layout_alignStart="@+id/editText_addPrice" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_addKeywords"
+        android:hint="Keywords"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/editText_addBookFormat"
+        android:layout_alignLeft="@+id/editText_addBookFormat"
+        android:layout_alignStart="@+id/editText_addBookFormat" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:id="@+id/editText_addAuthor"
+        android:hint="Author"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/editText_addTitle"
+        android:layout_alignLeft="@+id/editText_addTitle"
+        android:layout_alignStart="@+id/editText_addTitle" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="15dp"
+        android:id="@+id/editText_addPublisher"
+        android:hint="Publisher"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/editText_addAuthor"
+        android:layout_alignLeft="@+id/editText_addAuthor"
+        android:layout_alignStart="@+id/editText_addAuthor" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_addISBN"
+        android:hint="ISBN"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_addTitle"
+        android:hint="Title"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/editText_addISBN"
+        android:layout_alignLeft="@+id/editText_addISBN"
+        android:layout_alignStart="@+id/editText_addISBN" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_addSubject"
+        android:hint="Book Subject"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/editText_addKeywords"
+        android:layout_alignLeft="@+id/editText_addKeywords"
+        android:layout_alignStart="@+id/editText_addKeywords" />
+
+    <Button
+        android:text="Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_addBook"
+        android:layout_below="@+id/editText_addSubject"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Edit Book"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_x="107dp"
+        android:layout_y="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+
+        android:ems="10"
+        android:id="@+id/editText_addYearPublished"
+        android:hint="Year Published"
+        android:background="#FFFFFF"
+        android:height="25dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/editText_addPublisher"
+        android:layout_alignLeft="@+id/editText_addPublisher"
+        android:layout_alignStart="@+id/editText_addPublisher"
+        android:inputType="none"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
 </RelativeLayout>

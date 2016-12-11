@@ -130,7 +130,7 @@ public class Login extends AppCompatActivity {
                 e.printStackTrace();
                 err = "Exception: "+e.getMessage();
             }
-            Intent i = new Intent(Login.this, MainActivity_WithNavigation.class);
+            Intent i = new Intent(Login.this, User_MainActivity.class);
             i.putExtra("loginid", loginid);
             i.putExtra("password", password);
             i.putExtra("err", err); // Error

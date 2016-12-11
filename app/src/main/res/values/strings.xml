@@ -11,4 +11,5 @@
     <string name="title_activity_main__with_navigation">MainActivity_WithNavigation</string>
     <string name="title_activity_add_book">AddBook</string>
     <string name="title_activity_feedback">Feedback</string>
+    <string name="title_activity_user_getallbooks">user_getallbooks</string>
 </resources>
