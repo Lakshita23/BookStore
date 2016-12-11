@@ -33,6 +33,11 @@
         <activity android:name=".User_FeedbackDisplayListView" />
         <activity android:name=".User_Feedback" />
         <activity android:name=".User_RatingsOnFeedback"></activity>
+        <activity android:name=".BookBrowse" />
+        <activity android:name=".BookInformation" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".Statistics" />
+        <activity android:name=".Registration"></activity>
     </application>
 
 </manifest>

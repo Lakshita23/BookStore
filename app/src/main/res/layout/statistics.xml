@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="Enter number of most popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="53dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="49dp"
+        android:id="@+id/textView24"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView24"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/num_m"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/book_m"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/author_m" />
+
+    <Button
+        android:text="Publisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/author_m"
+        android:layout_toRightOf="@+id/author_m"
+        android:layout_toEndOf="@+id/author_m"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:id="@+id/publisher_m" />
+
+    <Button
+        android:text="books"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:id="@+id/book_m"
+        android:layout_below="@+id/num_m"
+        android:layout_toLeftOf="@+id/author_m"
+        android:layout_toStartOf="@+id/author_m"
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="33dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/author_m"
+        android:layout_marginTop="60dp"
+        android:id="@+id/stat_list"
+        style="@style/Widget.AppCompat.ListView"
+        android:layout_alignLeft="@+id/book_m"
+        android:layout_alignStart="@+id/book_m"
+        android:layout_alignRight="@+id/publisher_m"
+        android:layout_alignEnd="@+id/publisher_m" />
+</RelativeLayout>
