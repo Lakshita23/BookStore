@@ -33,6 +33,7 @@ public class User_MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user__main);
 
         // Run backgroundTask to get all books for users
+
         new UserGetBooksBackgroundTask().execute();
 //        GetDataJSON1 g1 = new GetDataJSON1();
 //        g1.execute();
@@ -45,10 +46,6 @@ public class User_MainActivity extends AppCompatActivity {
 //
 //        GetDataJSON4 g4 = new GetDataJSON4();
 //        g4.execute();
-
-
-
-
 
 
         Intent fromLogin = getIntent();
@@ -373,17 +370,5 @@ public class User_MainActivity extends AppCompatActivity {
             startActivity(booksListView);
         }
     }
-
-    public void Admin_Page(View view){
-        Intent booksListView = new Intent(this, UserDisplayListView.class);
-        startActivity(booksListView);
-    }
-
-//    public  void ViewAllBooks(View view){
-//        Intent myIntent = new Intent(User_MainActivity.this, BookBrowse.class);
-//        myIntent.putExtra("loginid", receivedloginid);
-//        startActivity(myIntent);
-//    }
-
 
 }

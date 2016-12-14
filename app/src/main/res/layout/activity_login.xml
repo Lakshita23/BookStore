@@ -12,9 +12,6 @@
     tools:context="com.example.lakshita.bookstore.newLogin">
 
 
-
-
-
     <Button
         android:text="Login"
         android:layout_width="wrap_content"
@@ -35,33 +32,6 @@
         android:clickable="true"
         android:textColor="#2538c6"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText_LoginPassword"
-        android:hint="password"
-        android:layout_above="@+id/button_login"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:textSize="20sp"
-        android:textColor="@android:color/background_dark"
-        style="@style/Widget.AppCompat.EditText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText_LoginLoginID"
-        android:hint="Username"
-        android:layout_marginBottom="20dp"
-        android:textColor="@android:color/background_dark"
-        android:layout_above="@+id/editText_LoginPassword"
-        android:layout_alignLeft="@+id/editText_LoginPassword"
-        android:layout_alignStart="@+id/editText_LoginPassword" />
-
     <TextView
         android:text="Login Page"
         android:layout_width="wrap_content"
@@ -72,4 +42,33 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/background_dark" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_LoginLoginID"
+        android:hint="Username"
+        android:textSize="20sp"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_above="@+id/editText_LoginPassword"
+        android:layout_alignLeft="@+id/editText_LoginPassword"
+        android:layout_alignStart="@+id/editText_LoginPassword" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText_LoginPassword"
+        android:hint="password"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_above="@+id/button_login"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+
 </RelativeLayout>

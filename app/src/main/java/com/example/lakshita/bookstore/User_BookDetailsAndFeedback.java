@@ -73,24 +73,24 @@ public class User_BookDetailsAndFeedback extends AppCompatActivity {
         DateToStr = dateFormat.format(currentDate);
 
         // Capture Click on "View All Feedback Link"
-//        feedbackDLV.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View arg0) {
-//
-//                // Toast.makeText(User_BookDetailsAndFeedback.this, "fdgshfjasdg'ds" + feedbackjsonString, Toast.LENGTH_SHORT).show();
-//
-//                // Start User_Feedback.class
-//                Intent seeAllFeedback = new Intent(User_BookDetailsAndFeedback.this, User_FeedbackDisplayListView.class);
-//
-//                // Pass ISBN to grab all feedbacks
-//                seeAllFeedback.putExtra("loginid", receivedloginid);
-//                seeAllFeedback.putExtra("bookISBN", receivedISBN);
-//                seeAllFeedback.putExtra("numOfFeedbacks", numOfFeedbacks);
-//                seeAllFeedback.putExtra("allFeedbacks", feedbackjsonString);
-//
-//
-//                startActivity(seeAllFeedback);
-//            }
-//        });
+        feedbackDLV.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Toast.makeText(User_BookDetailsAndFeedback.this, "fdgshfjasdg'ds" + feedbackjsonString, Toast.LENGTH_SHORT).show();
+
+                // Start User_Feedback.class
+                Intent seeAllFeedback = new Intent(User_BookDetailsAndFeedback.this, User_FeedbackDisplayListView.class);
+
+                // Pass ISBN to grab all feedbacks
+                seeAllFeedback.putExtra("loginid", receivedloginid);
+                seeAllFeedback.putExtra("bookISBN", receivedISBN);
+                seeAllFeedback.putExtra("numOfFeedbacks", numOfFeedbacks);
+                seeAllFeedback.putExtra("allFeedbacks", feedbackjsonString);
+
+
+                startActivity(seeAllFeedback);
+            }
+        });
 
     }
     // At this activity, load all feedbacks
@@ -150,7 +150,7 @@ public class User_BookDetailsAndFeedback extends AppCompatActivity {
         String JSON_URL;
         @Override
         protected void onPreExecute() {
-            JSON_URL = "http://bookdb.16mb.com/getFeedbacks.php";
+            JSON_URL = "http://bookdb.16mb.com/getFeedbacks.php?ISBN=" + receivedISBN;
         }
 
         @Override
@@ -180,6 +180,8 @@ public class User_BookDetailsAndFeedback extends AppCompatActivity {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
+
+                //
 
                 // Return Stringbuilder
                 return stringBuilder.toString().trim();

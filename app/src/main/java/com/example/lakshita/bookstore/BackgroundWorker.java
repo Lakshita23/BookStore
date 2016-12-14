@@ -79,9 +79,6 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         // alertDialog.show();
 
         // If admins = true
-        if(result.contains("fail")){
-            Toast.makeText(context, "Wrong Username/Password", Toast.LENGTH_SHORT).show();
-        }
 
         if(result.contains("success")){
             if (result.contains("true")) {
@@ -91,15 +88,17 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 context.startActivity(toAdminMainPage);
 
                 Toast.makeText(context, loginid, Toast.LENGTH_SHORT).show();
-            }else{
+            }else if (result.contains("false")){
                 Intent toUserMainPage = new Intent(context, User_MainActivity.class);
                 toUserMainPage.putExtra("passedLoginid",loginid);
                 context.startActivity(toUserMainPage);
-
                 Toast.makeText(context, loginid, Toast.LENGTH_SHORT).show();
             }
         }
-
+//        if (result.contains("fail")){
+        else{
+            Toast.makeText(context, "Wrong Username/Password", Toast.LENGTH_SHORT).show();
+        }
 
 
         //
